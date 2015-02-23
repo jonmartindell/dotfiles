@@ -1,0 +1,10 @@
+# This is Git's per-user configuration file.
+[core]
+# Please adapt and uncomment the following lines:
+	user = Jonathan Martindell
+	excludesfile = ~/.gitignore_global
+[user]
+	name = Jonathan Martindell
+	email = jmartindell@covermymeds.com
+[init]
+	templatedir = ~/.git_template
