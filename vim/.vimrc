@@ -6,6 +6,7 @@ execute pathogen#infect()
 let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red
 
 " Turn on line numbering
 set number
@@ -58,7 +59,7 @@ function! s:VSetSearch()
   let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
   let @s = temp
 endfunction
-" 
+"
 " & command isn't that helpful as it drops the flags you specified
 " (from Practical Vim page 242)
 nnoremap & :&&<CR>
