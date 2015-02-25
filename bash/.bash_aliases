@@ -10,3 +10,4 @@ alias gs='git status'
 alias gg='git log --oneline --abbrev-commit --all --graph --decorate --color'
 alias loadtestschema='bundle exec rake db:schema:dump && bundle exec rake db:test:generate_schema && bundle exec rake db:test:load_testing_schema'
 alias fupthetests='for i in `seq 20` ; do bundle exec rspec --order random --format progress ; [[ ! $? = 0 ]] && break ; done'
+alias ls="ls -GFlash --color"

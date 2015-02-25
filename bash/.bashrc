@@ -12,8 +12,6 @@ else
 		PS1="\u@\h \W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
 fi
 
-# export SUDO_PS1="\[$bakred\]\u@\h\[$txtrst\] \w\$ "
-alias ls="ls -GFlash"
 
 # Automatically register identity to ssh agent
 ssh-add -L &> /dev/null
