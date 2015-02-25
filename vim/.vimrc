@@ -65,3 +65,5 @@ nnoremap & :&&<CR>
 xnoremap & :&&<CR>
 " Git branches in a status line?
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %Pset statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+" Keep some breathing lines around the cursorline when scrolling
+set scrolloff=5
