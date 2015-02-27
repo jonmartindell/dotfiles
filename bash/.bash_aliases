@@ -16,3 +16,4 @@ if [[ "$unamestr" == 'Linux' ]]; then
 elif [[ "$unamestr" == 'Darwin' ]]; then
   alias ls="ls -GFlash"
 fi
+alias bundlemevagrant='bundle install --path /vagrant/gems --verbose
