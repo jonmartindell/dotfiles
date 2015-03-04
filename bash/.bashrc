@@ -24,9 +24,14 @@ if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
 fi
 
-source $HOME/.rvm/scripts/rvm
-
 # Git tab complete branches
 if [ -f ~/.git-completion.bash ]; then
 	. ~/.git-completion.bash
+fi
+
+# Chruby if you ever need more than one ruby version (only for mac)
+unamestr=`uname`
+if [[ "$unamestr" == 'Darwin' ]]; then
+	source /usr/local/share/chruby/chruby.sh
+	chruby ruby-2.0.0-p353
 fi
