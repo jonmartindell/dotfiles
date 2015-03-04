@@ -1,3 +1,8 @@
+#source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source $GITAWAREPROMPT/main.sh
 export EDITOR=vim
