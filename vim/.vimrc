@@ -72,3 +72,5 @@ xnoremap & :&&<CR>
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %Pset statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 " Keep some breathing lines around the cursorline when scrolling
 set scrolloff=5
+" I hate shift-k!
+nnoremap K <nop>
