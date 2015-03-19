@@ -74,3 +74,6 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %Pset stat
 set scrolloff=5
 " I hate shift-k!
 nnoremap K <nop>
+" Ctlr-p by name
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
