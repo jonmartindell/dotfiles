@@ -17,8 +17,8 @@ set number
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 
 "Key mappings
-"let mapleader=','
-"noremap \ ,
+let mapleader=','
+noremap \ ,
 inoremap jk <ESC>
 " inoremap kj <ESC>
 nnoremap ; :
@@ -41,8 +41,8 @@ map <leader>es :sp %%
 map <leader>ev :vsp %%
 " DIY Hardmode
 " nnoremap h <nop>
-nnoremap j <nop>
-nnoremap k <nop>
+" nnoremap j <nop>
+" nnoremap k <nop>
 " nnoremap l <nop>
 
 " Mute highlighting
@@ -74,6 +74,37 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %Pset stat
 set scrolloff=5
 " I hate shift-k!
 nnoremap K <nop>
+" Also Q isn't that useful to me
+nnoremap Q <nop>
 " Ctlr-p by name
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+" Faster timeout for my crazy esc keys!
+set timeoutlen=200
+cnoremap dr! Dispatch! bundle exec rspec
+cnoremap dr Dispatch bundle exec rspec
+"============================================================================
+"" Use arrow keys to navigate after a :vimgrep or :helpgrep
+"============================================================================
+
+nmap <silent> <RIGHT>         :cnext<CR>
+nmap <silent> <RIGHT><RIGHT>  :cnfile<CR><C-G>
+nmap <silent> <LEFT>          :cprev<CR>
+nmap <silent> <LEFT><LEFT>    :cpfile<CR><C-G>
+"============================================================================
+" Make :help appear in a full-screen tab, instead of a window
+"============================================================================
+
+    "Only apply to .txt files...
+    augroup HelpInTabs
+        autocmd!
+        autocmd BufEnter  *.txt   call HelpInNewTab()
+    augroup END
+
+    "Only apply to help files...
+    function! HelpInNewTab ()
+        if &buftype == 'help'
+            "Convert the help window to a tab...
+            execute "normal \<C-W>T"
+        endif
+    endfunction

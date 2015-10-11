@@ -16,4 +16,16 @@ if [[ "$unamestr" == 'Linux' ]]; then
 elif [[ "$unamestr" == 'Darwin' ]]; then
   alias ls="ls -GFlash"
 fi
-alias bundlemevagrant='bundle install --path /vagrant/gems --verbose'
+
+vb() {
+  PWD=${PWD##*/}
+  CMD="cd /vagrant/code/$PWD; bundle exec $@";
+  vagrant ssh -c "$CMD"
+}
+
+v() {
+  PWD=${PWD##*/}
+  CMD="cd /vagrant/code/$PWD; $@";
+  vagrant ssh -c "$CMD"
+}
+
