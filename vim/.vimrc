@@ -81,8 +81,6 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " Faster timeout for my crazy esc keys!
 set timeoutlen=200
-cnoremap dr! Dispatch! bundle exec rspec
-cnoremap dr Dispatch bundle exec rspec
 "============================================================================
 "" Use arrow keys to navigate after a :vimgrep or :helpgrep
 "============================================================================
@@ -108,3 +106,16 @@ nmap <silent> <LEFT><LEFT>    :cpfile<CR><C-G>
             execute "normal \<C-W>T"
         endif
     endfunction
+
+"====================================================================
+" seeing is believing mappings for live evaulating ruby
+"====================================================================
+autocmd FileType ruby nmap <buffer> <C-m> <Plug>(xmpfilter-mark)
+autocmd FileType ruby xmap <buffer> <C-m> <Plug>(xmpfilter-mark)
+
+autocmd FileType ruby nmap <buffer> <C-r> <Plug>(xmpfilter-run)
+autocmd FileType ruby xmap <buffer> <C-r> <Plug>(xmpfilter-run)
+
+" Turbux - Turbo ruby tdd
+let g:turbux_runner = 'tslime'
+let g:turbux_command_prefix = 'bundle exec'

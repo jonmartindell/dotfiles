@@ -38,5 +38,8 @@ fi
 unamestr=`uname`
 if [[ "$unamestr" == 'Darwin' ]]; then
 	source /usr/local/share/chruby/chruby.sh
-	chruby ruby-2.0.0-p353
+	chruby ruby-2.4
 fi
+
+export NVM_DIR="/Users/jmartindell/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
