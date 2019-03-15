@@ -16,6 +16,9 @@ autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red
 set number
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 
+" spaces instead of tabs
+set expandtab
+
 "Key mappings
 let mapleader=','
 noremap \ ,
