@@ -13,3 +13,4 @@ tags
 .netrwhist
 # vim swaps
 *.swp
+.vscode/*

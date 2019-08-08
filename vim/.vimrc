@@ -122,3 +122,5 @@ autocmd FileType ruby xmap <buffer> <C-r> <Plug>(xmpfilter-run)
 " Turbux - Turbo ruby tdd
 let g:turbux_runner = 'tslime'
 let g:turbux_command_prefix = 'bundle exec'
+
+let g:phpfmt_autosave = 0

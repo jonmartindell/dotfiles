@@ -8,3 +8,5 @@
 	email = jmartindell@covermymeds.com
 [init]
 	templatedir = ~/.git_template
+[alias]
+    cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
