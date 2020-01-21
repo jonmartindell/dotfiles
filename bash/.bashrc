@@ -7,7 +7,7 @@ export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source $GITAWAREPROMPT/main.sh
 export EDITOR=vim
 # for prompt, only show username if it isn't me or a different host
-if [[ $(hostname -f) == "CMDVMOSXLT048.local" && $(id -u) == 85708632 ]];then
+if [[ $(hostname -f) == "CMMC02Z22K8LVCH" && $(id -u) == 85708632 ]];then
 		# you are you and here, don't state the obvious
 		# PS1="\[$txtred\]\[$(ruby -v | cut -d" " -f2)\]\[$txtrst\] \W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
 		PS1="\W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
@@ -34,15 +34,16 @@ if [ -f ~/.git-completion.bash ]; then
 	. ~/.git-completion.bash
 fi
 
-# Chruby if you ever need more than one ruby version (only for mac)
-unamestr=`uname`
-if [[ "$unamestr" == 'Darwin' ]]; then
-	source /usr/local/share/chruby/chruby.sh
-	chruby ruby-2.4
+# --httptoolkit--
+# This section will be reset each time a HTTP Toolkit terminal is opened
+if [ -n "$HTTP_TOOLKIT_ACTIVE" ]; then
+    # When HTTP Toolkit is active, we inject various overrides into PATH
+    export PATH="/Applications/HTTP Toolkit.app/Contents/Resources/app/httptoolkit-server/overrides/path:$PATH"
+
+    if command -v winpty >/dev/null 2>&1; then
+        # Work around for winpty's hijacking of certain commands
+        alias php=php
+        alias node=node
+    fi
 fi
-
-export NVM_DIR="/Users/jmartindell/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# php 7 ftw
-export PATH=/usr/local/php5/bin:$PATH
+# --httptoolkit-end--export REQUESTS_CA_BUNDLE=/private/tmp/CMMCERTROOT-CA.pem

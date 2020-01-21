@@ -2,7 +2,7 @@
 [core]
 # Please adapt and uncomment the following lines:
 	user = Jonathan Martindell
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/jmartindell/.gitignore_global
 [user]
 	name = Jonathan Martindell
 	email = jmartindell@covermymeds.com
